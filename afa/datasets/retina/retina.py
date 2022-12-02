@@ -5,7 +5,7 @@ import gdown
 import tensorflow as tf
 import tensorflow_datasets as tfds
 
-url="https://drive.google.com/file/d/1i566JmG2EhNZ1Nx1GMmKWcueJ8FdpYtG/view?usp=share_link"
+url="https://drive.google.com/file/d/1JAhPj63jo9II6Ed2TBvFi4Iet4faZwnw/view?usp=share_link"
 
 class Retina(tfds.core.GeneratorBasedBuilder):
     VERSION = tfds.core.Version("1.0.0")
@@ -16,11 +16,15 @@ class Retina(tfds.core.GeneratorBasedBuilder):
     def _info(self) -> tfds.core.DatasetInfo:
         return tfds.core.DatasetInfo(
             builder=self,
-            description="STructured Analysis of the Retina",
+            description="Retina dataset",
             features=tfds.features.FeaturesDict(
-                {"features": tfds.features.Tensor(shape=(1024,), dtype=tf.float32)}
+                {
+                    "image": tfds.features.Image(shape=(128, 128, 1)),
+                    "segment": tfds.features.Image(shape=(128, 128, 1)),
+                    "label": tfds.features.ClassLabel(num_classes=2),
+                }
             ),
-            supervised_keys=None,
+            supervised_keys=("features", "label"),
             citation=None,
         )
 
@@ -39,5 +43,10 @@ class Retina(tfds.core.GeneratorBasedBuilder):
         }
 
     def _generate_examples(self, data):
-        for i, x in enumerate(data):
-            yield i, dict(features=x)
+        for i, (x, y, z) in enumerate(zip(*data)):
+            record = {
+                    "image": x,
+                    "segment": y,
+                    "label": z,
+            }
+            yield i, record

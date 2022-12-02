@@ -1,17 +1,6 @@
 # Register Datasets
-import afa.datasets.adult
-import afa.datasets.bsds
-import afa.datasets.cube
-import afa.datasets.gas
-import afa.datasets.gas10
-import afa.datasets.hepmass
-import afa.datasets.miniboone
-import afa.datasets.mnist16
-import afa.datasets.power
-import afa.datasets.molecule
-import afa.datasets.molecule_small
-import afa.datasets.molecule_20
 import afa.datasets.retina
+import afa.datasets.gastro
 
 
 # The below code is a workaround to disable a warning message that is coming from
