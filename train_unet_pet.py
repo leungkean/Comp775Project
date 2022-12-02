@@ -12,7 +12,7 @@ import sys
 sys.path.insert(1, '../')
 
 from afa.masking import get_add_mask_fn, UniformMaskGenerator, BernoulliMaskGenerator, ImageBernoulliMaskGenerator
-from afa.networks.segment.unet2 import UNet
+from afa.networks.segment.unet3 import UNet
 from keras.layers import RandomFlip
 from keras.losses import SparseCategoricalCrossentropy
 
@@ -40,12 +40,11 @@ def load_pet_dataset(
             'segment': input_mask,
         }
 
-    buffer_size = 1000
     train = dataset['train'].map(load_image, num_parallel_calls=tf.data.AUTOTUNE)
 
     data_key = "image" if "image" in train.element_spec else "features"
     data_shape = train.element_spec[data_key].shape
-    train = train.shuffle(buffer_size)
+    train = train.shuffle(info.splits['train'].num_examples, seed=seed)
 
     train = train.batch(batch_size)
 
@@ -84,7 +83,7 @@ def load_pet_dataset(
     "--epochs", type=click.INT, default=10, help="The number of training epochs."
 )
 @click.option("--batch_size", type=click.INT, default=32, help="The batch size.")
-@click.option("--lr", type=click.FLOAT, default=1e-5, help="The learning rate.")
+@click.option("--lr", type=click.FLOAT, default=1e-3, help="The learning rate.")
 @click.option(
     "--activation", type=click.STRING, default="relu", help="The activation function."
 )
@@ -134,7 +133,7 @@ def main(
         min_observed_percentage,
     )
 
-    model = UNet()
+    model = UNet(input_size=data_shape)
 
     optimizer = keras.optimizers.Adam(learning_rate=lr)
     model.compile(
@@ -149,20 +148,18 @@ def main(
     saved_model_path = os.path.join(run.dir, "model/1/")
     tf.saved_model.save(model, saved_model_path)
 
-    model_artifact = wandb.Artifact(f"{dataset}_unet_classifier", type="classifier")
+    model_artifact = wandb.Artifact(f"oxford_pet_unet_classifier", type="classifier")
     model_artifact.add_dir(saved_model_path)
     run.log_artifact(model_artifact)
 
     accuracies = []
 
-    for p in np.linspace(0.0, 0.5, 21):
-        ds, _, _ = load_datasets(
-            dataset,
-            validation_split,
+    for p in np.linspace(0.0, 1.0, 21):
+        ds, _, _ = load_pet_dataset(
             batch_size,
             max_observed_percentage,
             min_observed_percentage,
-            mask_generator=BernoulliMaskGenerator(p=p),
+            mask_generator=ImageBernoulliMaskGenerator(p),
             repeat=False,
         )
 

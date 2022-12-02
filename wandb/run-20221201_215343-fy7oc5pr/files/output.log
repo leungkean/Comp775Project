@@ -1,0 +1,115 @@
+Metal device set to: Apple M1
+systemMemory: 8.00 GB
+maxCacheSize: 2.67 GB
+Model: "u_net"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ x (InputLayer)                 [(None, 128, 128, 1  0           []
+                                )]
+ b (InputLayer)                 [(None, 128, 128, 1  0           []
+                                )]
+ multiply (Multiply)            (None, 128, 128, 1)  0           ['x[0][0]',
+                                                                  'b[0][0]']
+ conv2d (Conv2D)                (None, 128, 128, 64  640         ['multiply[0][0]']
+                                )
+ conv2d_1 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d[0][0]']
+                                )
+ dropout (Dropout)              (None, 128, 128, 64  0           ['conv2d_1[0][0]']
+                                )
+ max_pooling2d (MaxPooling2D)   (None, 64, 64, 64)   0           ['dropout[0][0]']
+ conv2d_2 (Conv2D)              (None, 64, 64, 128)  73856       ['max_pooling2d[0][0]']
+ conv2d_3 (Conv2D)              (None, 64, 64, 128)  147584      ['conv2d_2[0][0]']
+ up_sampling2d (UpSampling2D)   (None, 128, 128, 12  0           ['conv2d_3[0][0]']
+                                8)
+ conv2d_4 (Conv2D)              (None, 128, 128, 64  32832       ['up_sampling2d[0][0]']
+                                )
+ concatenate (Concatenate)      (None, 128, 128, 12  0           ['conv2d_1[0][0]',
+                                8)                                'conv2d_4[0][0]']
+ conv2d_5 (Conv2D)              (None, 128, 128, 64  73792       ['concatenate[0][0]']
+                                )
+ conv2d_6 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d_5[0][0]']
+                                )
+ conv2d_7 (Conv2D)              (None, 128, 128, 2)  1154        ['conv2d_6[0][0]']
+ conv2d_8 (Conv2D)              (None, 128, 128, 1)  3           ['conv2d_7[0][0]']
+==================================================================================================
+Total params: 403,717
+Trainable params: 403,717
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/10
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+2022-12-01 21:53:47.759813: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+
+
+
+10/10 [==============================] - 10s 935ms/step - loss: 0.6872 - accuracy: 0.8609 - val_loss: 0.6845 - val_accuracy: 0.8587 - _timestamp: 1669949637.0000 - _runtime: 14.0000
+Epoch 2/10
+
+
+
+10/10 [==============================] - 9s 895ms/step - loss: 0.6720 - accuracy: 0.8621 - val_loss: 0.6715 - val_accuracy: 0.8606 - _timestamp: 1669949646.0000 - _runtime: 23.0000
+Epoch 3/10
+
+
+
+10/10 [==============================] - 9s 882ms/step - loss: 0.6507 - accuracy: 0.8633 - val_loss: 0.6557 - val_accuracy: 0.8631 - _timestamp: 1669949655.0000 - _runtime: 32.0000
+Epoch 4/10
+
+
+
+10/10 [==============================] - 9s 886ms/step - loss: 0.6273 - accuracy: 0.8641 - val_loss: 0.6378 - val_accuracy: 0.8652 - _timestamp: 1669949664.0000 - _runtime: 41.0000
+Epoch 5/10
+
+
+
+10/10 [==============================] - 9s 899ms/step - loss: 0.6030 - accuracy: 0.8646 - val_loss: 0.6188 - val_accuracy: 0.8664 - _timestamp: 1669949673.0000 - _runtime: 50.0000
+Epoch 6/10
+
+
+
+10/10 [==============================] - 9s 881ms/step - loss: 0.5792 - accuracy: 0.8651 - val_loss: 0.5993 - val_accuracy: 0.8671 - _timestamp: 1669949682.0000 - _runtime: 59.0000
+Epoch 7/10
+
+
+
+10/10 [==============================] - 9s 888ms/step - loss: 0.5567 - accuracy: 0.8656 - val_loss: 0.5800 - val_accuracy: 0.8677 - _timestamp: 1669949691.0000 - _runtime: 68.0000
+Epoch 8/10
+
+
+
+10/10 [==============================] - 9s 881ms/step - loss: 0.5373 - accuracy: 0.8662 - val_loss: 0.5625 - val_accuracy: 0.8683 - _timestamp: 1669949699.0000 - _runtime: 76.0000
+Epoch 9/10
+
+
+
+10/10 [==============================] - 9s 887ms/step - loss: 0.5225 - accuracy: 0.8668 - val_loss: 0.5473 - val_accuracy: 0.8686 - _timestamp: 1669949708.0000 - _runtime: 85.0000
+Epoch 10/10
+
+
+
+
+10/10 [==============================] - ETA: 0s - loss: 0.5134 - accuracy: 0.8672
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 9). These functions will not be directly callable after loading.
+10/10 [==============================] - 9s 897ms/step - loss: 0.5134 - accuracy: 0.8672 - val_loss: 0.5357 - val_accuracy: 0.8688 - _timestamp: 1669949717.0000 - _runtime: 94.0000
+2/2 [==============================] - 0s 111ms/step - loss: 0.6896 - accuracy: 0.8688
+2/2 [==============================] - 0s 109ms/step - loss: 0.6276 - accuracy: 0.8683
+2/2 [==============================] - 0s 111ms/step - loss: 0.6023 - accuracy: 0.8683
+2/2 [==============================] - 0s 109ms/step - loss: 0.5863 - accuracy: 0.8683
+2/2 [==============================] - 0s 109ms/step - loss: 0.5745 - accuracy: 0.8683
+2/2 [==============================] - 0s 109ms/step - loss: 0.5658 - accuracy: 0.8684
+2/2 [==============================] - 0s 110ms/step - loss: 0.5590 - accuracy: 0.8684
+2/2 [==============================] - 0s 109ms/step - loss: 0.5532 - accuracy: 0.8685
+2/2 [==============================] - 0s 110ms/step - loss: 0.5488 - accuracy: 0.8685
+2/2 [==============================] - 0s 108ms/step - loss: 0.5449 - accuracy: 0.8685
+2/2 [==============================] - 0s 110ms/step - loss: 0.5418 - accuracy: 0.8686
+2/2 [==============================] - 0s 109ms/step - loss: 0.5394 - accuracy: 0.8686
+2/2 [==============================] - 0s 109ms/step - loss: 0.5375 - accuracy: 0.8686
+2/2 [==============================] - 0s 108ms/step - loss: 0.5362 - accuracy: 0.8686
+2/2 [==============================] - 0s 109ms/step - loss: 0.5353 - accuracy: 0.8687
+2/2 [==============================] - 0s 109ms/step - loss: 0.5350 - accuracy: 0.8686
+2/2 [==============================] - 0s 110ms/step - loss: 0.5353 - accuracy: 0.8687
+2/2 [==============================] - 0s 108ms/step - loss: 0.5363 - accuracy: 0.8687
+2/2 [==============================] - 0s 110ms/step - loss: 0.5385 - accuracy: 0.8687
+2/2 [==============================] - 0s 109ms/step - loss: 0.5430 - accuracy: 0.8687
+2/2 [==============================] - 0s 110ms/step - loss: 0.5531 - accuracy: 0.8687

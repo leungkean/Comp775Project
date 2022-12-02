@@ -35,8 +35,8 @@ class UNet(Model):
         merge3 = concatenate([conv1,up3], axis = 3)
         conv3 = Conv2D(64, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(merge3)
         conv3 = Conv2D(64, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(conv3)
-        conv3 = Conv2D(2, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(conv3)
-        conv4 = Conv2D(1, 1, activation = 'sigmoid')(conv3)
+        conv3 = Conv2D(2, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(conv3) 
+        conv4 = Conv2D(3, 1, activation = 'softmax')(conv3)
 
         outputs = conv4
         inputs = {"x": x, "b": b}

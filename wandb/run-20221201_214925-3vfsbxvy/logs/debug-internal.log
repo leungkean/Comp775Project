@@ -1,0 +1,81 @@
+2022-12-01 21:49:26,286 INFO    MainThread:58452 [internal.py:wandb_internal():90] W&B internal server running at pid: 58452, started at: 2022-12-01 21:49:26.286772
+2022-12-01 21:49:26,288 INFO    WriterThread:58452 [datastore.py:open_for_write():75] open: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/run-3vfsbxvy.wandb
+2022-12-01 21:49:26,288 DEBUG   SenderThread:58452 [sender.py:send():235] send: header
+2022-12-01 21:49:26,288 DEBUG   SenderThread:58452 [sender.py:send():235] send: run
+2022-12-01 21:49:26,435 DEBUG   HandlerThread:58452 [handler.py:handle_request():141] handle_request: check_version
+2022-12-01 21:49:26,436 INFO    SenderThread:58452 [dir_watcher.py:__init__():205] watching files in: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files
+2022-12-01 21:49:26,436 INFO    SenderThread:58452 [sender.py:_start_run_threads():812] run started: 3vfsbxvy with start time 1669949365
+2022-12-01 21:49:26,436 DEBUG   SenderThread:58452 [sender.py:send():235] send: summary
+2022-12-01 21:49:26,437 INFO    SenderThread:58452 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:49:26,437 DEBUG   SenderThread:58452 [sender.py:send_request():249] send_request: check_version
+2022-12-01 21:49:26,532 DEBUG   HandlerThread:58452 [handler.py:handle_request():141] handle_request: run_start
+2022-12-01 21:49:26,533 DEBUG   HandlerThread:58452 [meta.py:__init__():35] meta init
+2022-12-01 21:49:26,537 DEBUG   HandlerThread:58452 [meta.py:__init__():49] meta init done
+2022-12-01 21:49:26,537 DEBUG   HandlerThread:58452 [meta.py:probe():209] probe
+2022-12-01 21:49:26,538 DEBUG   HandlerThread:58452 [meta.py:_save_pip():53] save pip
+2022-12-01 21:49:26,539 DEBUG   HandlerThread:58452 [meta.py:_save_pip():67] save pip done
+2022-12-01 21:49:26,540 DEBUG   HandlerThread:58452 [meta.py:_save_conda():74] save conda
+2022-12-01 21:49:27,442 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/conda-environment.yaml
+2022-12-01 21:49:27,443 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/requirements.txt
+2022-12-01 21:49:27,443 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/wandb-summary.json
+2022-12-01 21:49:29,851 DEBUG   HandlerThread:58452 [meta.py:_save_conda():84] save conda done
+2022-12-01 21:49:29,851 DEBUG   HandlerThread:58452 [meta.py:probe():247] probe done
+2022-12-01 21:49:29,911 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:29,912 DEBUG   SenderThread:58452 [sender.py:send():235] send: files
+2022-12-01 21:49:29,912 INFO    SenderThread:58452 [sender.py:_save_file():949] saving file wandb-metadata.json with policy now
+2022-12-01 21:49:29,914 DEBUG   HandlerThread:58452 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:49:29,914 DEBUG   SenderThread:58452 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:49:30,016 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:30,016 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:30,016 DEBUG   SenderThread:58452 [sender.py:send():235] send: config
+2022-12-01 21:49:30,016 DEBUG   SenderThread:58452 [sender.py:send():235] send: config
+2022-12-01 21:49:30,016 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:30,304 INFO    Thread-11 :58452 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmppe4uyhlbwandb/223hvyzd-wandb-metadata.json
+2022-12-01 21:49:30,356 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:30,356 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:30,357 DEBUG   SenderThread:58452 [sender.py:send():235] send: files
+2022-12-01 21:49:30,357 INFO    SenderThread:58452 [sender.py:_save_file():949] saving file model-best.h5 with policy live
+2022-12-01 21:49:30,357 DEBUG   HandlerThread:58452 [handler.py:handle_request():141] handle_request: get_summary
+2022-12-01 21:49:30,357 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:30,358 DEBUG   SenderThread:58452 [sender.py:send():235] send: config
+2022-12-01 21:49:30,455 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/conda-environment.yaml
+2022-12-01 21:49:30,455 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/train/events.out.tfevents.1669949370.Keans-Mac-mini.local.58447.0.v2
+2022-12-01 21:49:30,455 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/output.log
+2022-12-01 21:49:30,455 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/wandb-metadata.json
+2022-12-01 21:49:30,455 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/train
+2022-12-01 21:49:30,869 INFO    Thread-12 :58452 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmppe4uyhlbwandb/qeflagoq-train/events.out.tfevents.1669949370.Keans-Mac-mini.local.58447.0.v2
+2022-12-01 21:49:32,468 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/output.log
+2022-12-01 21:49:34,390 DEBUG   SenderThread:58452 [sender.py:send():235] send: files
+2022-12-01 21:49:34,391 INFO    SenderThread:58452 [sender.py:_save_file():949] saving file media/graph/graph_summary_01597a35530dc67da359.graph.json with policy now
+2022-12-01 21:49:34,391 DEBUG   SenderThread:58452 [sender.py:send():235] send: summary
+2022-12-01 21:49:34,393 INFO    SenderThread:58452 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:49:34,479 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/wandb-summary.json
+2022-12-01 21:49:34,479 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/media/graph/graph_summary_01597a35530dc67da359.graph.json
+2022-12-01 21:49:34,479 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/media
+2022-12-01 21:49:34,479 INFO    Thread-7  :58452 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/media/graph
+2022-12-01 21:49:34,521 WARNING MainThread:58452 [internal.py:wandb_internal():153] Internal process interrupt: 1
+2022-12-01 21:49:34,535 DEBUG   SenderThread:58452 [sender.py:send():235] send: telemetry
+2022-12-01 21:49:34,776 INFO    Thread-13 :58452 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmppe4uyhlbwandb/36dwswe4-media/graph/graph_summary_01597a35530dc67da359.graph.json
+2022-12-01 21:49:34,860 WARNING MainThread:58452 [internal.py:wandb_internal():153] Internal process interrupt: 2
+2022-12-01 21:49:34,860 ERROR   MainThread:58452 [internal.py:wandb_internal():156] Internal process interrupted.
+2022-12-01 21:49:35,536 INFO    WriterThread:58452 [datastore.py:close():279] close: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/run-3vfsbxvy.wandb
+2022-12-01 21:49:35,536 INFO    HandlerThread:58452 [handler.py:finish():806] shutting down handler
+2022-12-01 21:49:35,540 INFO    SenderThread:58452 [sender.py:finish():1111] shutting down sender
+2022-12-01 21:49:35,540 INFO    SenderThread:58452 [dir_watcher.py:finish():336] shutting down directory watcher
+2022-12-01 21:49:36,486 INFO    SenderThread:58452 [dir_watcher.py:finish():366] scan: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files
+2022-12-01 21:49:36,486 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/requirements.txt requirements.txt
+2022-12-01 21:49:36,487 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/output.log output.log
+2022-12-01 21:49:36,489 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/config.yaml config.yaml
+2022-12-01 21:49:36,489 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/wandb-summary.json wandb-summary.json
+2022-12-01 21:49:36,491 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/conda-environment.yaml conda-environment.yaml
+2022-12-01 21:49:36,495 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/wandb-metadata.json wandb-metadata.json
+2022-12-01 21:49:36,495 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/train/events.out.tfevents.1669949370.Keans-Mac-mini.local.58447.0.v2 train/events.out.tfevents.1669949370.Keans-Mac-mini.local.58447.0.v2
+2022-12-01 21:49:36,497 INFO    SenderThread:58452 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/media/graph/graph_summary_01597a35530dc67da359.graph.json media/graph/graph_summary_01597a35530dc67da359.graph.json
+2022-12-01 21:49:36,497 INFO    SenderThread:58452 [file_pusher.py:finish():145] shutting down file pusher
+2022-12-01 21:49:36,497 INFO    SenderThread:58452 [file_pusher.py:join():150] waiting for file pusher
+2022-12-01 21:49:37,066 INFO    Thread-15 :58452 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/output.log
+2022-12-01 21:49:37,103 INFO    Thread-16 :58452 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/config.yaml
+2022-12-01 21:49:37,104 INFO    Thread-18 :58452 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/conda-environment.yaml
+2022-12-01 21:49:37,108 INFO    Thread-17 :58452 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/wandb-summary.json
+2022-12-01 21:49:37,119 INFO    Thread-14 :58452 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_214925-3vfsbxvy/files/requirements.txt
+2022-12-01 21:49:37,601 INFO    MainThread:58452 [internal.py:handle_exit():80] Internal process exited

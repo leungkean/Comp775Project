@@ -1,0 +1,444 @@
+Metal device set to: Apple M1
+systemMemory: 8.00 GB
+maxCacheSize: 2.67 GB
+Model: "u_net"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ x (InputLayer)                 [(None, 128, 128, 3  0           []
+                                )]
+ b (InputLayer)                 [(None, 128, 128, 1  0           []
+                                )]
+ multiply (Multiply)            (None, 128, 128, 3)  0           ['x[0][0]',
+                                                                  'b[0][0]']
+ conv2d (Conv2D)                (None, 128, 128, 64  1792        ['multiply[0][0]']
+                                )
+ conv2d_1 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d[0][0]']
+                                )
+ max_pooling2d (MaxPooling2D)   (None, 64, 64, 64)   0           ['conv2d_1[0][0]']
+ conv2d_2 (Conv2D)              (None, 64, 64, 128)  73856       ['max_pooling2d[0][0]']
+ conv2d_3 (Conv2D)              (None, 64, 64, 128)  147584      ['conv2d_2[0][0]']
+ dropout (Dropout)              (None, 64, 64, 128)  0           ['conv2d_3[0][0]']
+ max_pooling2d_1 (MaxPooling2D)  (None, 32, 32, 128)  0          ['dropout[0][0]']
+ conv2d_4 (Conv2D)              (None, 32, 32, 256)  295168      ['max_pooling2d_1[0][0]']
+ conv2d_5 (Conv2D)              (None, 32, 32, 256)  590080      ['conv2d_4[0][0]']
+ up_sampling2d (UpSampling2D)   (None, 64, 64, 256)  0           ['conv2d_5[0][0]']
+ conv2d_6 (Conv2D)              (None, 64, 64, 128)  131200      ['up_sampling2d[0][0]']
+ concatenate (Concatenate)      (None, 64, 64, 256)  0           ['conv2d_3[0][0]',
+                                                                  'conv2d_6[0][0]']
+ conv2d_7 (Conv2D)              (None, 64, 64, 128)  295040      ['concatenate[0][0]']
+ conv2d_8 (Conv2D)              (None, 64, 64, 128)  147584      ['conv2d_7[0][0]']
+ up_sampling2d_1 (UpSampling2D)  (None, 128, 128, 12  0          ['conv2d_8[0][0]']
+                                8)
+ conv2d_9 (Conv2D)              (None, 128, 128, 64  32832       ['up_sampling2d_1[0][0]']
+                                )
+ concatenate_1 (Concatenate)    (None, 128, 128, 12  0           ['conv2d_1[0][0]',
+                                8)                                'conv2d_9[0][0]']
+ conv2d_10 (Conv2D)             (None, 128, 128, 64  73792       ['concatenate_1[0][0]']
+                                )
+ conv2d_11 (Conv2D)             (None, 128, 128, 64  36928       ['conv2d_10[0][0]']
+                                )
+ conv2d_12 (Conv2D)             (None, 128, 128, 2)  1154        ['conv2d_11[0][0]']
+ conv2d_13 (Conv2D)             (None, 128, 128, 1)  3           ['conv2d_12[0][0]']
+==================================================================================================
+Total params: 1,863,941
+Trainable params: 1,863,941
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/5
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+2022-12-01 21:16:33.314926: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+Corrupt JPEG data: premature end of data segment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+105/115 [==========================>...] - ETA: 12s - loss: 25.2712 - accuracy: 0.5805
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+
+115/115 [==============================] - 148s 1s/step - loss: 25.2429 - accuracy: 0.5817 - _timestamp: 1669947540.0000 - _runtime: 152.0000
+Epoch 2/5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106/115 [==========================>...] - ETA: 11s - loss: 24.8091 - accuracy: 0.5811
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+115/115 [==============================] - 144s 1s/step - loss: 24.8049 - accuracy: 0.5817 - _timestamp: 1669947684.0000 - _runtime: 296.0000
+Epoch 3/5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106/115 [==========================>...] - ETA: 11s - loss: 24.8600 - accuracy: 0.5820
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+115/115 [==============================] - 145s 1s/step - loss: 24.8756 - accuracy: 0.5817 - _timestamp: 1669947829.0000 - _runtime: 441.0000
+Epoch 4/5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106/115 [==========================>...] - ETA: 11s - loss: 25.4314 - accuracy: 0.5815
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+
+115/115 [==============================] - 154s 1s/step - loss: 25.4685 - accuracy: 0.5817 - _timestamp: 1669947982.0000 - _runtime: 594.0000
+Epoch 5/5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106/115 [==========================>...] - ETA: 11s - loss: 26.5620 - accuracy: 0.5817
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+
+115/115 [==============================] - 145s 1s/step - loss: 26.6213 - accuracy: 0.5817 - _timestamp: 1669948127.0000 - _runtime: 739.0000
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.
+[34m[1mwandb[39m[22m: Adding directory to artifact (/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_211628-suqsaltr/files/model/1)... Done. 0.1s
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_unet_pet.py", line 183, in <module>
+    main()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_unet_pet.py", line 158, in main
+    ds, _, _ = load_datasets(
+NameError: name 'load_datasets' is not defined

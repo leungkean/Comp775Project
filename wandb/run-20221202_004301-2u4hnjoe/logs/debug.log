@@ -1,0 +1,58 @@
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_setup.py:_flush():76] Loading settings from /Users/keanl/.config/wandb/settings
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_setup.py:_flush():76] Loading settings from /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/settings
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'train_unet_classifier.py', 'program': '/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_unet_classifier.py'}
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_init.py:_log_setup():428] Logging user logs to /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221202_004301-2u4hnjoe/logs/debug.log
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_init.py:_log_setup():429] Logging internal logs to /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221202_004301-2u4hnjoe/logs/debug-internal.log
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_init.py:init():462] calling init triggers
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_init.py:init():465] wandb.init called with sweep_config: {}
+config: {'dataset': 'gastro', 'validation_split': 'validation', 'epochs': 10, 'batch_size': 32, 'lr': 1e-05, 'activation': 'relu', 'dropout': None, 'max_observed_percentage': 0.5, 'min_observed_percentage': 0.05}
+2022-12-02 00:43:01,708 INFO    MainThread:62961 [wandb_init.py:init():510] wandb.init() called when a run is still active
+2022-12-02 00:43:02,199 INFO    MainThread:62961 [wandb_run.py:_config_callback():1136] config_cb None None {'dataset': 'gastro'}
+2022-12-02 00:43:02,382 INFO    MainThread:62961 [wandb_run.py:_atexit_cleanup():1867] got exitcode: 1
+2022-12-02 00:43:02,383 INFO    MainThread:62961 [wandb_run.py:_restore():1839] restore
+2022-12-02 00:43:04,768 INFO    MainThread:62961 [wandb_run.py:_on_finish():1996] got exit ret: file_counts {
+  wandb_count: 1
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 7987
+  total_bytes: 7987
+}
+
+2022-12-02 00:43:05,135 INFO    MainThread:62961 [wandb_run.py:_on_finish():1996] got exit ret: file_counts {
+  wandb_count: 1
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 7987
+  total_bytes: 7987
+}
+
+2022-12-02 00:43:05,266 INFO    MainThread:62961 [wandb_run.py:_on_finish():1996] got exit ret: file_counts {
+  wandb_count: 1
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 7987
+  total_bytes: 7987
+}
+
+2022-12-02 00:43:05,373 INFO    MainThread:62961 [wandb_run.py:_on_finish():1996] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 7987
+  total_bytes: 28988
+}
+
+2022-12-02 00:43:05,479 INFO    MainThread:62961 [wandb_run.py:_on_finish():1996] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 7987
+  total_bytes: 28988
+}
+

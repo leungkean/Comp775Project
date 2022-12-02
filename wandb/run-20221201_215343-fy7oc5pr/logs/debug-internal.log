@@ -1,0 +1,450 @@
+2022-12-01 21:53:43,773 INFO    MainThread:58706 [internal.py:wandb_internal():90] W&B internal server running at pid: 58706, started at: 2022-12-01 21:53:43.772987
+2022-12-01 21:53:43,773 INFO    WriterThread:58706 [datastore.py:open_for_write():75] open: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/run-fy7oc5pr.wandb
+2022-12-01 21:53:43,774 DEBUG   SenderThread:58706 [sender.py:send():235] send: header
+2022-12-01 21:53:43,774 DEBUG   SenderThread:58706 [sender.py:send():235] send: run
+2022-12-01 21:53:43,903 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: check_version
+2022-12-01 21:53:43,904 INFO    SenderThread:58706 [dir_watcher.py:__init__():205] watching files in: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files
+2022-12-01 21:53:43,904 INFO    SenderThread:58706 [sender.py:_start_run_threads():812] run started: fy7oc5pr with start time 1669949623
+2022-12-01 21:53:43,904 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:53:43,904 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:53:43,904 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: check_version
+2022-12-01 21:53:43,995 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: run_start
+2022-12-01 21:53:43,996 DEBUG   HandlerThread:58706 [meta.py:__init__():35] meta init
+2022-12-01 21:53:43,999 DEBUG   HandlerThread:58706 [meta.py:__init__():49] meta init done
+2022-12-01 21:53:43,999 DEBUG   HandlerThread:58706 [meta.py:probe():209] probe
+2022-12-01 21:53:44,000 DEBUG   HandlerThread:58706 [meta.py:_save_pip():53] save pip
+2022-12-01 21:53:44,001 DEBUG   HandlerThread:58706 [meta.py:_save_pip():67] save pip done
+2022-12-01 21:53:44,002 DEBUG   HandlerThread:58706 [meta.py:_save_conda():74] save conda
+2022-12-01 21:53:44,910 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:53:44,910 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/conda-environment.yaml
+2022-12-01 21:53:44,910 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/requirements.txt
+2022-12-01 21:53:47,262 DEBUG   HandlerThread:58706 [meta.py:_save_conda():84] save conda done
+2022-12-01 21:53:47,263 DEBUG   HandlerThread:58706 [meta.py:probe():247] probe done
+2022-12-01 21:53:47,321 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,321 DEBUG   SenderThread:58706 [sender.py:send():235] send: files
+2022-12-01 21:53:47,321 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-metadata.json with policy now
+2022-12-01 21:53:47,324 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:53:47,324 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:53:47,441 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,442 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,442 DEBUG   SenderThread:58706 [sender.py:send():235] send: config
+2022-12-01 21:53:47,442 DEBUG   SenderThread:58706 [sender.py:send():235] send: config
+2022-12-01 21:53:47,442 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,747 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,747 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,747 DEBUG   SenderThread:58706 [sender.py:send():235] send: files
+2022-12-01 21:53:47,747 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file model-best.h5 with policy live
+2022-12-01 21:53:47,747 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: get_summary
+2022-12-01 21:53:47,747 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:53:47,748 DEBUG   SenderThread:58706 [sender.py:send():235] send: config
+2022-12-01 21:53:47,755 INFO    Thread-11 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/2tdarcfe-wandb-metadata.json
+2022-12-01 21:53:47,923 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/conda-environment.yaml
+2022-12-01 21:53:47,923 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-metadata.json
+2022-12-01 21:53:47,924 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:53:47,924 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:53:47,924 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train
+2022-12-01 21:53:48,347 INFO    Thread-12 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/386xic3v-train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:53:49,207 DEBUG   SenderThread:58706 [sender.py:send():235] send: files
+2022-12-01 21:53:49,208 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file media/graph/graph_summary_6023c7455a85fb55e5e7.graph.json with policy now
+2022-12-01 21:53:49,209 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:53:49,211 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:53:49,619 INFO    Thread-13 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/3qi577pn-media/graph/graph_summary_6023c7455a85fb55e5e7.graph.json
+2022-12-01 21:53:49,930 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:53:49,930 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:53:49,930 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:53:49,930 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media/graph/graph_summary_6023c7455a85fb55e5e7.graph.json
+2022-12-01 21:53:49,930 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media/graph
+2022-12-01 21:53:49,930 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media
+2022-12-01 21:53:51,936 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:53:53,945 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:53:55,956 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:53:56,961 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:53:56,962 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation
+2022-12-01 21:53:57,362 INFO    Thread-14 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/2pxz8nly-validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:53:57,825 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:53:57,825 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:53:57,826 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:53:57,826 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:53:57,826 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:53:57,826 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:53:57,827 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:53:57,827 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:53:57,827 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:53:57,963 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:53:57,963 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:53:57,963 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:53:57,963 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:53:57,963 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:53:58,539 INFO    Thread-15 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/yhfnwd34-model-best.h5
+2022-12-01 21:53:59,968 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:01,975 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:02,447 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:54:02,447 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:54:03,986 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:05,992 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:06,807 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:06,808 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:06,808 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:06,808 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:06,809 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:06,809 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:06,809 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:06,809 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:06,809 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:06,993 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:54:06,993 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:54:06,993 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:06,993 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:54:07,993 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:10,000 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:12,011 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:14,022 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:15,022 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/config.yaml
+2022-12-01 21:54:15,625 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:15,625 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:15,626 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:15,626 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:15,626 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:15,626 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:15,626 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:15,626 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:15,627 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:16,028 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:16,028 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:54:16,028 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:54:16,028 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:54:16,028 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:17,546 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:54:17,547 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:54:17,638 DEBUG   SenderThread:58706 [sender.py:send():235] send: stats
+2022-12-01 21:54:18,039 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:20,045 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:22,052 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:24,052 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:24,446 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:24,446 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:24,446 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:24,447 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:24,447 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:24,448 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:24,448 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:24,448 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:24,448 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:25,053 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:54:25,053 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:54:25,053 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:25,053 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:54:26,058 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:28,062 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:30,068 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:32,079 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:32,644 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:54:32,645 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:54:33,458 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:33,462 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:33,462 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:33,463 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:33,463 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:33,463 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:33,463 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:33,463 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:33,463 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:34,085 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:34,085 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:54:34,085 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:54:34,085 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:54:34,085 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:36,087 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:38,093 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:40,098 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:42,109 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:42,310 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:42,310 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:42,311 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:42,311 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:42,312 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:42,312 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:42,312 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:42,312 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:42,312 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:43,115 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:54:43,115 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:54:43,115 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:43,115 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:54:44,115 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:46,116 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:47,749 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:54:47,750 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:54:48,127 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:50,128 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:51,080 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:51,080 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:51,081 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:51,081 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:51,081 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:51,082 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:51,082 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:51,082 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:51,082 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:51,133 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:54:51,134 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:54:51,134 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:51,134 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:54:51,607 INFO    Thread-16 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/10puzg75-train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:54:52,139 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:53,115 DEBUG   SenderThread:58706 [sender.py:send():235] send: stats
+2022-12-01 21:54:54,145 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:56,151 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:58,157 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:54:59,788 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:59,788 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:54:59,789 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:54:59,789 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:59,789 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:59,789 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:59,789 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:54:59,789 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:54:59,790 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:00,159 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:55:00,159 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:55:00,159 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:55:00,159 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:55:00,159 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:00,561 INFO    Thread-17 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/hv4s8n6s-validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:55:02,165 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:02,851 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:55:02,852 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:55:04,166 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:06,167 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:08,169 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:08,598 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:55:08,598 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:55:08,598 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:55:08,599 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:08,599 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:08,599 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:08,600 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:08,600 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:08,600 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:09,169 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:55:09,169 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:55:09,169 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:55:09,169 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:55:10,175 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:12,181 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:14,185 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:16,193 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:17,486 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:55:17,487 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:55:17,488 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:55:17,488 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:17,488 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:17,489 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:17,489 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:17,489 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:17,489 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:17,958 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: stop_status
+2022-12-01 21:55:17,958 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: stop_status
+2022-12-01 21:55:18,204 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:55:18,204 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:55:18,204 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:55:18,204 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5
+2022-12-01 21:55:18,204 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:18,891 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: log_artifact
+2022-12-01 21:55:18,892 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: log_artifact
+2022-12-01 21:55:19,209 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/saved_model.pb
+2022-12-01 21:55:19,210 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables/variables.index
+2022-12-01 21:55:19,210 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables/variables.data-00000-of-00001
+2022-12-01 21:55:19,210 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables
+2022-12-01 21:55:19,210 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model
+2022-12-01 21:55:19,210 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/assets
+2022-12-01 21:55:19,210 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1
+2022-12-01 21:55:19,660 INFO    Thread-19 :58706 [upload_job.py:push():87] Skipped uploading /Users/keanl/.cache/wandb/artifacts/obj/md5/58/2d096b76da481ce8c040b8c80fcaba
+2022-12-01 21:55:19,893 INFO    Thread-21 :58706 [upload_job.py:push():90] Uploaded file /Users/keanl/.cache/wandb/artifacts/obj/md5/33/f2b2dd92837098935867b38e327b24
+2022-12-01 21:55:20,075 INFO    Thread-20 :58706 [upload_job.py:push():90] Uploaded file /Users/keanl/.cache/wandb/artifacts/obj/md5/f9/dc39532a6df927a6dc7ca94bd18636
+2022-12-01 21:55:20,215 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:20,766 INFO    SenderThread:58706 [sender.py:send_request_log_artifact():1006] logged artifact retina_unet_classifier - {'id': 'QXJ0aWZhY3Q6MjkxNDgwNjQz', 'digest': '02817e5f1337dfff978bc09e2ee73d9b', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ2NTc2NzAw', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MjkxNDc5NDA5', 'versionIndex': 3}}, 'version': 'latest'}
+2022-12-01 21:55:22,222 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:24,228 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:26,239 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:27,574 DEBUG   SenderThread:58706 [sender.py:send():235] send: config
+2022-12-01 21:55:27,671 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: log_artifact
+2022-12-01 21:55:27,672 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: log_artifact
+2022-12-01 21:55:27,868 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: partial_history
+2022-12-01 21:55:28,247 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:28,247 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media/table/accuracy_missingness_plot_table_10_c005fe9c97bf9194cbb2.table.json
+2022-12-01 21:55:28,247 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media
+2022-12-01 21:55:28,247 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_created():256] file/dir created: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media/table
+2022-12-01 21:55:28,498 INFO    Thread-23 :58706 [upload_job.py:push():90] Uploaded file /Users/keanl/.cache/wandb/artifacts/obj/md5/08/89eb851ce96d079c7ea046e45c72a9
+2022-12-01 21:55:29,255 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:29,264 INFO    SenderThread:58706 [sender.py:send_request_log_artifact():1006] logged artifact run-fy7oc5pr-accuracy_missingness_plot_table - {'id': 'QXJ0aWZhY3Q6MjkxNDgwNzA5', 'digest': 'aa0348b330b5ad71a0706a223ce68635', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ2NjI0MDg5', 'latestArtifact': None}, 'version': 'latest'}
+2022-12-01 21:55:29,265 DEBUG   SenderThread:58706 [sender.py:send():235] send: files
+2022-12-01 21:55:29,266 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file media/table/accuracy_missingness_plot_table_10_c005fe9c97bf9194cbb2.table.json with policy now
+2022-12-01 21:55:29,267 DEBUG   SenderThread:58706 [sender.py:send():235] send: history
+2022-12-01 21:55:29,267 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:29,268 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:29,268 DEBUG   SenderThread:58706 [sender.py:send():235] send: telemetry
+2022-12-01 21:55:29,268 DEBUG   SenderThread:58706 [sender.py:send():235] send: stats
+2022-12-01 21:55:29,767 INFO    Thread-24 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/67e5pubb-media/table/accuracy_missingness_plot_table_10_c005fe9c97bf9194cbb2.table.json
+2022-12-01 21:55:30,248 DEBUG   SenderThread:58706 [sender.py:send():235] send: exit
+2022-12-01 21:55:30,249 INFO    SenderThread:58706 [sender.py:send_exit():371] handling exit code: 0
+2022-12-01 21:55:30,252 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:30,252 INFO    SenderThread:58706 [sender.py:send_exit():373] handling runtime: 106
+2022-12-01 21:55:30,253 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:30,253 INFO    SenderThread:58706 [sender.py:send_exit():379] send defer
+2022-12-01 21:55:30,253 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:30,255 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,255 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 0
+2022-12-01 21:55:30,255 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,255 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-12-01 21:55:30,255 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 1
+2022-12-01 21:55:30,255 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,256 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 1
+2022-12-01 21:55:30,260 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:55:30,261 INFO    Thread-7  :58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:30,670 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:30,671 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,671 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-12-01 21:55:30,671 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 2
+2022-12-01 21:55:30,671 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:30,671 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,671 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 2
+2022-12-01 21:55:30,672 DEBUG   SenderThread:58706 [sender.py:send():235] send: stats
+2022-12-01 21:55:30,672 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,672 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-12-01 21:55:30,672 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 3
+2022-12-01 21:55:30,672 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,672 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 3
+2022-12-01 21:55:30,672 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,672 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-12-01 21:55:30,672 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 4
+2022-12-01 21:55:30,672 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,672 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 4
+2022-12-01 21:55:30,672 DEBUG   SenderThread:58706 [sender.py:send():235] send: summary
+2022-12-01 21:55:30,673 INFO    SenderThread:58706 [sender.py:_save_file():949] saving file wandb-summary.json with policy end
+2022-12-01 21:55:30,673 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,673 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-12-01 21:55:30,673 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 5
+2022-12-01 21:55:30,673 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,673 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 5
+2022-12-01 21:55:30,673 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,673 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-12-01 21:55:30,777 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:30,786 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 6
+2022-12-01 21:55:30,786 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:30,787 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:30,787 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 6
+2022-12-01 21:55:30,787 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:30,787 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-12-01 21:55:30,787 INFO    SenderThread:58706 [dir_watcher.py:finish():336] shutting down directory watcher
+2022-12-01 21:55:30,893 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,271 INFO    SenderThread:58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:55:31,272 INFO    SenderThread:58706 [dir_watcher.py:_on_file_modified():269] file/dir modified: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/config.yaml
+2022-12-01 21:55:31,273 INFO    SenderThread:58706 [dir_watcher.py:finish():366] scan: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files
+2022-12-01 21:55:31,274 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/requirements.txt requirements.txt
+2022-12-01 21:55:31,274 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log output.log
+2022-12-01 21:55:31,275 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/config.yaml config.yaml
+2022-12-01 21:55:31,280 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json wandb-summary.json
+2022-12-01 21:55:31,283 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/conda-environment.yaml conda-environment.yaml
+2022-12-01 21:55:31,287 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-metadata.json wandb-metadata.json
+2022-12-01 21:55:31,287 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model-best.h5 model-best.h5
+2022-12-01 21:55:31,292 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/saved_model.pb model/1/saved_model.pb
+2022-12-01 21:55:31,293 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables/variables.data-00000-of-00001 model/1/variables/variables.data-00000-of-00001
+2022-12-01 21:55:31,293 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables/variables.index model/1/variables/variables.index
+2022-12-01 21:55:31,293 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2 train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:55:31,293 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2 validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:55:31,294 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media/graph/graph_summary_6023c7455a85fb55e5e7.graph.json media/graph/graph_summary_6023c7455a85fb55e5e7.graph.json
+2022-12-01 21:55:31,294 INFO    SenderThread:58706 [dir_watcher.py:finish():380] scan save: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/media/table/accuracy_missingness_plot_table_10_c005fe9c97bf9194cbb2.table.json media/table/accuracy_missingness_plot_table_10_c005fe9c97bf9194cbb2.table.json
+2022-12-01 21:55:31,294 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 7
+2022-12-01 21:55:31,294 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:31,295 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:31,295 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 7
+2022-12-01 21:55:31,295 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:31,295 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-12-01 21:55:31,295 INFO    SenderThread:58706 [file_pusher.py:finish():145] shutting down file pusher
+2022-12-01 21:55:31,401 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,402 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:31,512 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,512 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:31,618 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,618 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:31,725 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,725 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:31,832 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,832 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:31,937 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:31,937 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,043 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,043 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,148 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,148 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,251 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,251 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,358 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,358 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,405 INFO    Thread-29 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/conda-environment.yaml
+2022-12-01 21:55:32,465 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,465 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,572 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,572 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,677 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,677 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,782 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,782 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,888 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,888 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,954 INFO    Thread-26 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/output.log
+2022-12-01 21:55:32,993 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:32,993 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:32,998 INFO    Thread-25 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/requirements.txt
+2022-12-01 21:55:33,004 INFO    Thread-28 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/wandb-summary.json
+2022-12-01 21:55:33,007 INFO    Thread-35 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/2oiyqzla-validation/events.out.tfevents.1669949636.Keans-Mac-mini.local.58701.1.v2
+2022-12-01 21:55:33,016 INFO    Thread-27 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/config.yaml
+2022-12-01 21:55:33,025 INFO    Thread-31 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/saved_model.pb
+2022-12-01 21:55:33,090 INFO    Thread-34 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/2x5fnex6-train/events.out.tfevents.1669949627.Keans-Mac-mini.local.58701.0.v2
+2022-12-01 21:55:33,100 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,100 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,207 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,207 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,250 INFO    Thread-32 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables/variables.data-00000-of-00001
+2022-12-01 21:55:33,286 INFO    Thread-30 :58706 [upload_job.py:push():132] Uploaded file /var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/tmpe2zopwlewandb/bkew49p6-model-best.h5
+2022-12-01 21:55:33,315 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,315 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,424 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,425 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,507 INFO    Thread-33 :58706 [upload_job.py:push():132] Uploaded file /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/files/model/1/variables/variables.index
+2022-12-01 21:55:33,535 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,536 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,645 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,646 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,712 INFO    Thread-6  :58706 [sender.py:transition_state():392] send defer: 8
+2022-12-01 21:55:33,714 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:33,714 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 8
+2022-12-01 21:55:33,715 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:33,715 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-12-01 21:55:33,755 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,801 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 9
+2022-12-01 21:55:33,801 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,803 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:33,803 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 9
+2022-12-01 21:55:33,803 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:33,803 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-12-01 21:55:33,804 INFO    SenderThread:58706 [sender.py:transition_state():392] send defer: 10
+2022-12-01 21:55:33,805 DEBUG   SenderThread:58706 [sender.py:send():235] send: final
+2022-12-01 21:55:33,806 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: defer
+2022-12-01 21:55:33,806 DEBUG   SenderThread:58706 [sender.py:send():235] send: footer
+2022-12-01 21:55:33,806 INFO    HandlerThread:58706 [handler.py:handle_request_defer():164] handle defer: 10
+2022-12-01 21:55:33,806 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: defer
+2022-12-01 21:55:33,806 INFO    SenderThread:58706 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-12-01 21:55:33,911 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: poll_exit
+2022-12-01 21:55:33,912 DEBUG   SenderThread:58706 [sender.py:send_request():249] send_request: poll_exit
+2022-12-01 21:55:33,913 INFO    SenderThread:58706 [file_pusher.py:join():150] waiting for file pusher
+2022-12-01 21:55:34,142 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: sampled_history
+2022-12-01 21:55:34,147 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: get_summary
+2022-12-01 21:55:34,150 DEBUG   HandlerThread:58706 [handler.py:handle_request():141] handle_request: shutdown
+2022-12-01 21:55:34,150 INFO    HandlerThread:58706 [handler.py:finish():806] shutting down handler
+2022-12-01 21:55:34,811 INFO    WriterThread:58706 [datastore.py:close():279] close: /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/wandb/run-20221201_215343-fy7oc5pr/run-fy7oc5pr.wandb
+2022-12-01 21:55:35,038 INFO    SenderThread:58706 [sender.py:finish():1111] shutting down sender
+2022-12-01 21:55:35,038 INFO    SenderThread:58706 [file_pusher.py:finish():145] shutting down file pusher
+2022-12-01 21:55:35,038 INFO    SenderThread:58706 [file_pusher.py:join():150] waiting for file pusher
+2022-12-01 21:55:35,133 INFO    MainThread:58706 [internal.py:handle_exit():80] Internal process exited

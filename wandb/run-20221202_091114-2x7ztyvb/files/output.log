@@ -1,0 +1,290 @@
+Metal device set to: Apple M1
+systemMemory: 8.00 GB
+maxCacheSize: 2.67 GB
+Model: "u_net"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ x (InputLayer)                 [(None, 128, 128, 3  0           []
+                                )]
+ b (InputLayer)                 [(None, 128, 128, 1  0           []
+                                )]
+ multiply (Multiply)            (None, 128, 128, 3)  0           ['x[0][0]',
+                                                                  'b[0][0]']
+ conv2d (Conv2D)                (None, 128, 128, 64  1792        ['multiply[0][0]']
+                                )
+ conv2d_1 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d[0][0]']
+                                )
+ dropout (Dropout)              (None, 128, 128, 64  0           ['conv2d_1[0][0]']
+                                )
+ max_pooling2d (MaxPooling2D)   (None, 64, 64, 64)   0           ['dropout[0][0]']
+ conv2d_2 (Conv2D)              (None, 64, 64, 128)  73856       ['max_pooling2d[0][0]']
+ conv2d_3 (Conv2D)              (None, 64, 64, 128)  147584      ['conv2d_2[0][0]']
+ up_sampling2d (UpSampling2D)   (None, 128, 128, 12  0           ['conv2d_3[0][0]']
+                                8)
+ conv2d_4 (Conv2D)              (None, 128, 128, 64  32832       ['up_sampling2d[0][0]']
+                                )
+ concatenate (Concatenate)      (None, 128, 128, 12  0           ['conv2d_1[0][0]',
+                                8)                                'conv2d_4[0][0]']
+ conv2d_5 (Conv2D)              (None, 128, 128, 64  73792       ['concatenate[0][0]']
+                                )
+ conv2d_6 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d_5[0][0]']
+                                )
+ conv2d_7 (Conv2D)              (None, 128, 128, 2)  1154        ['conv2d_6[0][0]']
+ conv2d_8 (Conv2D)              (None, 128, 128, 3)  9           ['conv2d_7[0][0]']
+==================================================================================================
+Total params: 404,875
+Trainable params: 404,875
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/10
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+2022-12-02 09:11:19.123280: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+Corrupt JPEG data: premature end of data segment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49/57 [========================>.....] - ETA: 16s - loss: 1.0846 - accuracy: 0.5572
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+
+
+57/57 [==============================] - 121s 2s/step - loss: 1.0821 - accuracy: 0.5611 - _timestamp: 1669990399.0000 - _runtime: 125.0000
+Epoch 2/10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+49/57 [========================>.....] - ETA: 17s - loss: 1.0361 - accuracy: 0.5814
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+
+
+57/57 [==============================] - 123s 2s/step - loss: 1.0336 - accuracy: 0.5807 - _timestamp: 1669990522.0000 - _runtime: 248.0000
+Epoch 3/10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50/57 [=========================>....] - ETA: 14s - loss: 1.0030 - accuracy: 0.5816
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+
+
+57/57 [==============================] - 116s 2s/step - loss: 0.9992 - accuracy: 0.5835 - _timestamp: 1669990638.0000 - _runtime: 364.0000
+Epoch 4/10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+53/57 [==========================>...] - ETA: 8s - loss: 0.9653 - accuracy: 0.5805
+Corrupt JPEG data: 240 extraneous bytes before marker 0xd9
+
+
+
+57/57 [==============================] - 120s 2s/step - loss: 0.9639 - accuracy: 0.5810 - _timestamp: 1669990758.0000 - _runtime: 484.0000
+Epoch 5/10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

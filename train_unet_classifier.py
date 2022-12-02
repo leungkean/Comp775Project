@@ -12,7 +12,7 @@ import sys
 sys.path.insert(1, '../')
 
 from afa.masking import get_add_mask_fn, UniformMaskGenerator, BernoulliMaskGenerator, ImageBernoulliMaskGenerator
-from afa.networks.segment.unet import UNet
+from afa.networks.segment.unet2 import UNet
 from keras.layers import RandomFlip
 
 
@@ -99,7 +99,7 @@ def load_datasets(
     "--epochs", type=click.INT, default=10, help="The number of training epochs."
 )
 @click.option("--batch_size", type=click.INT, default=32, help="The batch size.")
-@click.option("--lr", type=click.FLOAT, default=1e-5, help="The learning rate.")
+@click.option("--lr", type=click.FLOAT, default=1e-3, help="The learning rate.")
 @click.option(
     "--activation", type=click.STRING, default="relu", help="The activation function."
 )
@@ -153,7 +153,7 @@ def main(
         min_observed_percentage,
     )
 
-    model = UNet()
+    model = UNet(input_size=data_shape)
 
     optimizer = keras.optimizers.Adam(learning_rate=lr)
     model.compile(
@@ -174,14 +174,14 @@ def main(
 
     accuracies = []
 
-    for p in np.linspace(0.1, 0.5, 21):
+    for p in np.linspace(0.0, 1.0, 21):
         _, ds, _ = load_datasets(
             dataset,
             validation_split,
             batch_size,
             max_observed_percentage,
             min_observed_percentage,
-            mask_generator=BernoulliMaskGenerator(p=p),
+            mask_generator=ImageBernoulliMaskGenerator(p),
             repeat=False,
         )
 

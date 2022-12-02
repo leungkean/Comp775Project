@@ -1,0 +1,94 @@
+
+[1mDownloading and preparing dataset Unknown size (download: Unknown size, generated: Unknown size, total: Unknown size) to /Users/keanl/tensorflow_datasets/retina/1.0.0...
+2022-12-01 21:50:10.318050: W tensorflow/core/platform/cloud/google_auth_provider.cc:184] All attempts to get a Google authentication bearer token failed, returning an empty token. Retrieving token from files failed with "NOT_FOUND: Could not locate the credentials file.". Retrieving token from GCE failed with "FAILED_PRECONDITION: Error executing an HTTP request: libcurl code 6 meaning 'Couldn't resolve host name', error details: Could not resolve host: metadata".
+Downloading...
+From: https://drive.google.com/uc?id=1JAhPj63jo9II6Ed2TBvFi4Iet4faZwnw
+To: /Users/keanl/tensorflow_datasets/downloads/retina_data.pkl
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 13.0M/13.0M [00:00<00:00, 28.8MB/s]
+Generating splits...:  33%|█████████████████████████████████████████████████▋                                                                                                   | 1/3 [00:00<00:01,  1.10 splits/s]
+Generating validation examples...: 0 examples [00:00, ? examples/s]
+Metal device set to: Apple M1
+systemMemory: 8.00 GB
+maxCacheSize: 2.67 GB
+[1mDataset retina downloaded and prepared to /Users/keanl/tensorflow_datasets/retina/1.0.0. Subsequent calls will reuse this data.
+Model: "u_net"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ x (InputLayer)                 [(None, 128, 128, 3  0           []
+                                )]
+ b (InputLayer)                 [(None, 128, 128, 1  0           []
+                                )]
+ multiply (Multiply)            (None, 128, 128, 3)  0           ['x[0][0]',
+                                                                  'b[0][0]']
+ conv2d (Conv2D)                (None, 128, 128, 64  1792        ['multiply[0][0]']
+                                )
+ conv2d_1 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d[0][0]']
+                                )
+ dropout (Dropout)              (None, 128, 128, 64  0           ['conv2d_1[0][0]']
+                                )
+ max_pooling2d (MaxPooling2D)   (None, 64, 64, 64)   0           ['dropout[0][0]']
+ conv2d_2 (Conv2D)              (None, 64, 64, 128)  73856       ['max_pooling2d[0][0]']
+ conv2d_3 (Conv2D)              (None, 64, 64, 128)  147584      ['conv2d_2[0][0]']
+ up_sampling2d (UpSampling2D)   (None, 128, 128, 12  0           ['conv2d_3[0][0]']
+                                8)
+ conv2d_4 (Conv2D)              (None, 128, 128, 64  32832       ['up_sampling2d[0][0]']
+                                )
+ concatenate (Concatenate)      (None, 128, 128, 12  0           ['conv2d_1[0][0]',
+                                8)                                'conv2d_4[0][0]']
+ conv2d_5 (Conv2D)              (None, 128, 128, 64  73792       ['concatenate[0][0]']
+                                )
+ conv2d_6 (Conv2D)              (None, 128, 128, 64  36928       ['conv2d_5[0][0]']
+                                )
+ conv2d_7 (Conv2D)              (None, 128, 128, 2)  1154        ['conv2d_6[0][0]']
+ conv2d_8 (Conv2D)              (None, 128, 128, 1)  3           ['conv2d_7[0][0]']
+==================================================================================================
+Total params: 404,869
+Trainable params: 404,869
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2022-12-01 21:50:20.497847: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+WARNING:tensorflow:Model was constructed with shape (None, 128, 128, 3) for input KerasTensor(type_spec=TensorSpec(shape=(None, 128, 128, 3), dtype=tf.float32, name='x'), name='x', description="created by layer 'x'"), but it was called on an input with incompatible shape (None, 128, 128, 1).
+WARNING:tensorflow:Model was constructed with shape (None, 128, 128, 3) for input KerasTensor(type_spec=TensorSpec(shape=(None, 128, 128, 3), dtype=tf.float32, name='x'), name='x', description="created by layer 'x'"), but it was called on an input with incompatible shape (None, 128, 128, 1).
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_unet_classifier.py", line 203, in <module>
+    main()
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 1128, in __call__
+    return self.main(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 1053, in main
+    rv = self.invoke(ctx)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 1395, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/click/core.py", line 754, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_unet_classifier.py", line 166, in main
+    model.fit(train, epochs=epochs, validation_data=val, callbacks=[WandbCallback()], steps_per_epoch=10, validation_steps=5)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/integration/magic.py", line 301, in _magic_fit
+    return _fit_wrapper(
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/integration/magic.py", line 269, in _fit_wrapper
+    return fn(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/integration/keras/keras.py", line 163, in new_v2
+    return old_v2(*args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/var/folders/t8/xpt23s1j08vd186gztkz58700000gn/T/__autograph_generated_filere1a6gsr.py", line 15, in tf__train_function
+    retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
+ValueError: in user code:
+    File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/engine/training.py", line 1051, in train_function  *
+        return step_function(self, iterator)
+    File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/engine/training.py", line 1040, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/engine/training.py", line 1030, in run_step  **
+        outputs = model.train_step(data)
+    File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/engine/training.py", line 889, in train_step
+        y_pred = self(x, training=True)
+    File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/engine/input_spec.py", line 248, in assert_input_compatibility
+        raise ValueError(
+    ValueError: Exception encountered when calling layer "u_net" (type UNet).
+    Input 0 of layer "conv2d" is incompatible with the layer: expected axis -1 of input shape to have value 3, but received input with shape (None, 128, 128, 1)
+    Call arguments received by layer "u_net" (type UNet):
+      • inputs={'x': 'tf.Tensor(shape=(None, 128, 128, 1), dtype=float32)', 'b': 'tf.Tensor(shape=(None, 128, 128, 1), dtype=float32)'}
+      • training=True
+      • mask=None
