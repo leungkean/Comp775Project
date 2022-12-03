@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 37, in <module>
+    main()
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 32, in main
+    unet_model = run.use_artifact("oxford_pet_unet_classifier:v10")
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 222, in wrapper
+    return func(self, *args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 2296, in use_artifact
+    raise TypeError("Cannot use artifact when in offline mode.")
+TypeError: Cannot use artifact when in offline mode.
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 37, in <module>
+    main()
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 32, in main
+    unet_model = run.use_artifact("oxford_pet_unet_classifier:v10")
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 222, in wrapper
+    return func(self, *args, **kwargs)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/wandb/sdk/wandb_run.py", line 2296, in use_artifact
+    raise TypeError("Cannot use artifact when in offline mode.")
+TypeError: Cannot use artifact when in offline mode.

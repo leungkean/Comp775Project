@@ -264,6 +264,68 @@ class IndirectClassificationEnv(AcquisitionEnv):
         info["target"] = self.current_target
         return obs, reward, done, info
 
+class PretrainedUNetEnv(AcquisitionEnv):
+    """An acquisition environment where the agent defers to a pretrained U-Net.
+
+    In this version, the agent has one terminal action available. When the terminal
+    action is selected, the segmentation is made by a provided pretrained
+    UNet, and the reward is based on the loss of the segmentation which is the
+    cross-entropy loss between the predicted segmentation and the ground truth.
+
+    Args:
+        dataset_manager: The dataset manager from which features and targets will be
+            sourced. Features are the image and targets are the segmentation mask.
+        classifier_fn: A function that accepts an environment observation and returns
+            the predicted class.
+    """
+
+    def __init__(
+        self,
+        dataset_manager: EnvironmentDatasetManager,
+        classifier_fn: Callable[[Observation], np.ndarray],
+        **kwargs
+    ):
+        super().__init__(dataset_manager, **kwargs)
+
+        self.classifier_fn = classifier_fn
+
+        self.action_space = gym.spaces.Discrete(self.num_features + 1)
+
+        self._current_loss = 0.0
+        self._current_target = None
+
+    @property
+    def current_target(self):
+        return self._current_target
+
+    def reset(self):
+        self._current_features, self._current_target = ray.get(
+            self._dataset_manager.get_new_instance.remote()
+        )
+
+        self.current_observed_mask[:] = False
+
+        return self._get_observation()
+
+    def _compute_reward(self, action):
+        reward = super()._compute_reward(action)
+
+        if action == self.num_features:
+            self._current_loss = self.classifier_fn.evaluate(self.get_observation())
+            reward = -self._current_loss
+
+        return reward
+
+    def step(self, action):
+        obs, reward, done, info = super().step(action)
+
+        info["target"] = self.current_target
+        if done and action == self.num_features:
+            info["loss"] = (
+                self._current_loss
+            )
+
+        return obs, reward, done, info
 
 class PretrainedClassifierEnv(AcquisitionEnv):
     """An acquisition environment where the agent defers to a pretrained classifier.

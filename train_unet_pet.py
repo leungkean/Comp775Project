@@ -20,7 +20,7 @@ def load_pet_dataset(
         batch_size,
         max_observed_percentage,
         min_observed_percentage,
-        mask_generator=ImageBernoulliMaskGenerator(0.5),
+        mask_generator=ImageBernoulliMaskGenerator(0.75),
         seed=123,
         repeat=True,
 ):
@@ -146,7 +146,7 @@ def main(
     model.fit(train, epochs=epochs, callbacks=[WandbCallback()], steps_per_epoch=steps_per_epoch)
 
     saved_model_path = os.path.join(run.dir, "model/1/")
-    tf.saved_model.save(model, saved_model_path)
+    model.save(saved_model_path)
 
     model_artifact = wandb.Artifact(f"oxford_pet_unet_classifier", type="classifier")
     model_artifact.add_dir(saved_model_path)

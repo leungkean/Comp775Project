@@ -1,0 +1,16 @@
+{
+    "os": "macOS-13.0.1-arm64-arm-64bit",
+    "python": "3.9.13",
+    "heartbeatAt": "2022-12-03T01:22:06.955236",
+    "startedAt": "2022-12-03T01:22:06.058209",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py",
+    "codePath": "train_segment_afa.py",
+    "host": "Keans-Mac-mini.local",
+    "username": "keanl",
+    "executable": "/opt/homebrew/Caskroom/miniforge/base/bin/python3"
+}

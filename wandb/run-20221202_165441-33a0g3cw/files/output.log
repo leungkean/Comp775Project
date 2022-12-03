@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 38, in <module>
+    main()
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 33, in main
+    unet_artifact_dir = os.path.abspath(unet_model.download())
+UnboundLocalError: local variable 'unet_model' referenced before assignment
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 38, in <module>
+    main()
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 33, in main
+    unet_artifact_dir = os.path.abspath(unet_model.download())
+UnboundLocalError: local variable 'unet_model' referenced before assignment

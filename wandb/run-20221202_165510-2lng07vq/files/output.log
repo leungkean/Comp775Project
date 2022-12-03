@@ -1,0 +1,22 @@
+WARNING:tensorflow:SavedModel saved prior to TF 2.5 detected when loading Keras model. Please ensure that you are saving the model with model.save() or tf.keras.models.save_model(), *NOT* tf.saved_model.save(). To confirm, there should be a file named "keras_metadata.pb" in the SavedModel directory.
+WARNING:tensorflow:SavedModel saved prior to TF 2.5 detected when loading Keras model. Please ensure that you are saving the model with model.save() or tf.keras.models.save_model(), *NOT* tf.saved_model.save(). To confirm, there should be a file named "keras_metadata.pb" in the SavedModel directory.
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 38, in <module>
+    main()
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 34, in main
+    unet_model = tf.keras.models.load_model(unet_artifact_dir)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/saving/saved_model/load.py", line 204, in _read_legacy_metadata
+    raise ValueError(
+ValueError: Unable to create a Keras model from SavedModel at /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/artifacts/oxford_pet_unet_classifier:v10. This SavedModel was exported with `tf.saved_model.save`, and lacks the Keras metadata file. Please save your Keras model by calling `model.save`or `tf.keras.models.save_model`. Note that you can still load this SavedModel with `tf.saved_model.load`.
+Traceback (most recent call last):
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 38, in <module>
+    main()
+  File "/Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/train_segment_afa.py", line 34, in main
+    unet_model = tf.keras.models.load_model(unet_artifact_dir)
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/keras/saving/saved_model/load.py", line 204, in _read_legacy_metadata
+    raise ValueError(
+ValueError: Unable to create a Keras model from SavedModel at /Users/keanl/Desktop/Computer_Science/Comp_775/project/Comp775Project/artifacts/oxford_pet_unet_classifier:v10. This SavedModel was exported with `tf.saved_model.save`, and lacks the Keras metadata file. Please save your Keras model by calling `model.save`or `tf.keras.models.save_model`. Note that you can still load this SavedModel with `tf.saved_model.load`.
