@@ -7,7 +7,7 @@ import ray
 from afa.typing import ArrayTree
 
 
-#@ray.remote(num_gpus=0)
+@ray.remote(num_gpus=0)
 class EnvironmentDatasetManager:
     """An actor responsible for providing instances to acquisition environments.
 
@@ -53,8 +53,8 @@ class EnvironmentDatasetManager:
         error_on_new_epoch: bool = False,
         seed: Optional[int] = None,
     ):
-        self._features = np.asarray(features, np.float32)
-        self._targets = None if targets is None else np.asarray(targets, np.uint8)
+        self._features = np.asarray(features)
+        self._targets = None if targets is None else np.asarray(targets)
         self._error_on_new_epoch = error_on_new_epoch
 
         self._prng = np.random.RandomState(seed or random.randrange(int(2e9)))

@@ -3,7 +3,7 @@ import os
 import skimage.io as io
 import skimage.transform as trans
 import numpy as np
-from keras.models import *
+from keras.models import Model
 from keras.layers import *
 from keras.optimizers import *
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler
@@ -15,6 +15,7 @@ class UNet(Model):
     def __init__(
             self,
             input_size=(128, 128, 3),
+            **kwargs
     ): 
         x = Input(shape=input_size, name='x')
         b = Input(shape=(*input_size[:-1], 1), name='b')

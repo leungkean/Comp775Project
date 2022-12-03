@@ -2,6 +2,9 @@
 import afa.datasets.retina
 import afa.datasets.gastro
 
+# Register Environment
+import afa.environments
+
 
 # The below code is a workaround to disable a warning message that is coming from
 # TensorFlow Probability and dm-tree. Eventually, this code can probably be removed,

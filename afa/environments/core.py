@@ -1,6 +1,7 @@
 import abc
 from typing import Optional, Union, Callable
 
+import tensorflow as tf
 import gym
 import numpy as np
 import ray
@@ -281,13 +282,11 @@ class PretrainedUNetEnv(AcquisitionEnv):
 
     def __init__(
         self,
-        dataset_manager: EnvironmentDatasetManager,
-        classifier_fn: Callable[[Observation], np.ndarray],
-        **kwargs
+        env_config
     ):
-        super().__init__(dataset_manager, **kwargs)
+        super().__init__(env_config['dataset_manager'], index_dims=env_config['index_dims'], acquisition_cost=env_config['acquisition_cost'])
 
-        self.classifier_fn = classifier_fn
+        self.classifier_fn = tf.keras.models.load_model(env_config['model_dir'])
 
         self.action_space = gym.spaces.Discrete(self.num_features + 1)
 
@@ -311,8 +310,8 @@ class PretrainedUNetEnv(AcquisitionEnv):
         reward = super()._compute_reward(action)
 
         if action == self.num_features:
-            self._current_loss = self.classifier_fn.evaluate(self.get_observation())
-            reward = -self._current_loss
+            self._current_loss = self.classifier_fn.evaluate({'x': self.get_observation()["observed"], 'b': np.ones((*self._index_shape[:-1], 1))}, self._current_target)
+            reward -= self._current_loss
 
         return reward
 
