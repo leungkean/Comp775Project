@@ -1,2 +1,2 @@
 # Comp775Project
-Image Segmentation using Active Feature Acquisition
+Image Segmentation using Both Supervised and Unsupervised Active Feature Acquisition
