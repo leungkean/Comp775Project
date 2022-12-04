@@ -14,7 +14,7 @@ from keras import backend as keras
 class UNet(Model):
     def __init__(
             self,
-            input_size=(128, 128, 3),
+            input_size=(64, 64, 3),
             **kwargs
     ): 
         x = Input(shape=input_size, name='x')

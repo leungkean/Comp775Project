@@ -20,7 +20,7 @@ def load_pet_dataset(
         batch_size,
         max_observed_percentage,
         min_observed_percentage,
-        mask_generator=ImageBernoulliMaskGenerator(0.75),
+        mask_generator=ImageBernoulliMaskGenerator(0.25),
         seed=123,
         repeat=True,
 ):
@@ -32,8 +32,8 @@ def load_pet_dataset(
         return input_image, input_mask
 
     def load_image(datapoint): 
-        input_image = tf.image.resize(datapoint['image'], (128, 128)) 
-        input_mask = tf.image.resize(datapoint['segmentation_mask'], (128, 128)) 
+        input_image = tf.image.resize(datapoint['image'], (64, 64)) 
+        input_mask = tf.image.resize(datapoint['segmentation_mask'], (64, 64)) 
         input_image, input_mask = normalize(input_image, input_mask) 
         return {
             'image': input_image,

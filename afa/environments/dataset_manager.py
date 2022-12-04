@@ -53,8 +53,8 @@ class EnvironmentDatasetManager:
         error_on_new_epoch: bool = False,
         seed: Optional[int] = None,
     ):
-        self._features = np.asarray(features)
-        self._targets = None if targets is None else np.asarray(targets)
+        self._features = np.asarray(features, dtype=np.float32)
+        self._targets = None if targets is None else np.asarray(targets, dtype=np.float32)
         self._error_on_new_epoch = error_on_new_epoch
 
         self._prng = np.random.RandomState(seed or random.randrange(int(2e9)))

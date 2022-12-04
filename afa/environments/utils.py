@@ -1,6 +1,7 @@
 from typing import Callable, Tuple, Union
 
 import gym
+import tensorflow as tf
 
 from afa.data import load_unsupervised_split_as_numpy, load_supervised_split_as_numpy
 from afa.environments.core import (
@@ -14,6 +15,7 @@ from afa.networks.classifiers.utils import get_environment_classifier_fn
 from afa.rewards import get_reward_fn
 from afa.surrogate.utils import get_surrogate_model
 from afa.typing import ConfigDict
+from afa.data import load_pet_as_numpy
 
 
 def create_surrogate_air_env_fn(
@@ -152,6 +154,42 @@ def create_pretrained_classifier_env_fn(
             acquisition_cost=config["acquisition_cost"],
         )
         return env
+
+    if return_dataset_manager:
+        return env_fn, dataset_manager
+
+    return env_fn
+
+def create_unet_env_fn(
+    data_split: str,
+    return_dataset_manager: bool = False,
+) -> Union[
+    Callable[[ConfigDict], gym.Env],
+    Tuple[Callable[[ConfigDict], gym.Env], EnvironmentDatasetManager],
+]:
+    """Creates a pretrained unet env that defers to a pretrained unet at terminal steps.
+
+    Args:
+        data_split: The dataset split to use.
+        return_dataset_manager: If True, then the environments' dataset manager
+            will also be returned.
+
+    Returns:
+        A function that creates the environment.
+    """
+    features, targets = load_pet_as_numpy(data_split)
+    dataset_manager = EnvironmentDatasetManager.remote(features, targets)
+
+    def env_fn(config: ConfigDict) -> gym.Env:
+
+        env_config = {
+                "dataset_manager": dataset_manager,
+                "model_dir": config["classifier_dir"],
+                "index_dims": 2,
+                "acquisition_cost": config["acquisition_cost"],
+        }
+
+        return gym.make('PretrainedUNetEnv-v0', env_config=env_config)
 
     if return_dataset_manager:
         return env_fn, dataset_manager

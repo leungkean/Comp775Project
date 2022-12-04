@@ -66,8 +66,10 @@ class AcquisitionEnv(gym.Env, metaclass=abc.ABCMeta):
         data_shape = ray.get(self._dataset_manager.features_shape.remote())
         index_dims = index_dims or len(data_shape)
         assert index_dims <= len(data_shape)
-        self._index_dims = index_dims
+        self._index_dims = index_dims 
         self._index_shape = data_shape[: 1 + index_dims]
+        if self._index_dims == 2:
+            self._index_shape = (*self._index_shape[:-1], 1)
 
         self._current_features = None
         self.current_observed_mask = np.zeros(self._index_shape, dtype=np.bool_)
@@ -97,7 +99,10 @@ class AcquisitionEnv(gym.Env, metaclass=abc.ABCMeta):
         return self._current_features
 
     def _get_observation(self):
-        observed = self.current_example * self.current_observed_mask
+        if len(self.current_observed_mask.shape) < len(self.current_example.shape):
+            observed = self.current_example * np.expand_dims(self.current_observed_mask, -1)
+        else: 
+            observed = self.current_example * self.current_observed_mask
         return {
             "observed": observed,
             "mask": self.current_observed_mask.astype(observed.dtype),
@@ -110,9 +115,7 @@ class AcquisitionEnv(gym.Env, metaclass=abc.ABCMeta):
         return 0.0
 
     def reset(self):
-        self._current_features = ray.get(
-            self._dataset_manager.get_new_instance.remote()
-        )
+        self._current_features = ray.get(self._dataset_manager.get_new_instance.remote())
 
         self.current_observed_mask[:] = False
 
@@ -298,9 +301,7 @@ class PretrainedUNetEnv(AcquisitionEnv):
         return self._current_target
 
     def reset(self):
-        self._current_features, self._current_target = ray.get(
-            self._dataset_manager.get_new_instance.remote()
-        )
+        self._current_features, self._current_target = ray.get(self._dataset_manager.get_new_instance.remote())
 
         self.current_observed_mask[:] = False
 
@@ -310,8 +311,11 @@ class PretrainedUNetEnv(AcquisitionEnv):
         reward = super()._compute_reward(action)
 
         if action == self.num_features:
-            self._current_loss = self.classifier_fn.evaluate({'x': self.get_observation()["observed"], 'b': np.ones((*self._index_shape[:-1], 1))}, self._current_target)
-            reward -= self._current_loss
+            input_dict = {}
+            input_dict['x'] = np.expand_dims(self._get_observation()['observed'], 0)
+            input_dict['b'] = np.ones((1, *self._index_shape))
+            self._current_loss = self.classifier_fn.evaluate(input_dict, np.expand_dims(self.current_target, 0), verbose=0)
+            reward -= self._current_loss[0]
 
         return reward
 
@@ -319,10 +323,6 @@ class PretrainedUNetEnv(AcquisitionEnv):
         obs, reward, done, info = super().step(action)
 
         info["target"] = self.current_target
-        if done and action == self.num_features:
-            info["loss"] = (
-                self._current_loss
-            )
 
         return obs, reward, done, info
 

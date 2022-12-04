@@ -40,8 +40,8 @@ def load_pet_as_numpy(
         return input_image, input_mask 
 
     def load_image(datapoint):
-          input_image = tf.image.resize(datapoint['image'], (128, 128))
-          input_mask = tf.image.resize(datapoint['segmentation_mask'], (128, 128))
+          input_image = tf.image.resize(datapoint['image'], (64, 64))
+          input_mask = tf.image.resize(datapoint['segmentation_mask'], (64, 64))
           input_image, input_mask = normalize(input_image, input_mask)
           return ( 
                   input_image, 
@@ -54,7 +54,6 @@ def load_pet_as_numpy(
     x = np.asarray(x)
     y = np.asarray(y)
     return x, y
-
 
 def load_unsupervised_split_as_numpy(dataset: str, split: str) -> np.ndarray:
     """Loads an unsupervised TensorFlow Dataset as a numpy array.
