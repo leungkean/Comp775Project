@@ -1,6 +1,7 @@
 # Register Datasets
 import afa.datasets.retina
 import afa.datasets.gastro
+import afa.datasets.stare
 
 # Register Environment
 import afa.environments
