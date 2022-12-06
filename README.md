@@ -9,7 +9,7 @@ To train the surrogate model for AIR (unsupervised AFA) just run `train_air_defo
 
 Example command:
 ```
-python train_air_deformer_surrogate.py --dataset retina --batch_size 4 --steps 120000
+python train_air_deformer_surrogate.py --dataset stare --batch_size 4 --steps 120000
 ```
 
 ## Training the Agent using PPO
