@@ -18,3 +18,8 @@ To evaluate the agent run the scripts `eval_air_surrogate.py` and `eval_gym_ppo.
 I mainly contributed by modifying the code so as to be able train an agent using a pretrained
 U-Net model for supervised AFA found in `train_gym_ppo.py` and `eval_gym_ppo.py`. I also implemented the U-Net model in `afa/network/segment`
 in `unet.py`.
+
+## Notes
+- `afa` is the main driver for active feature acquisition
+- Here `afa` and `bax` are required libraries for `afa`.
+
