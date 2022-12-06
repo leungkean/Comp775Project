@@ -162,6 +162,7 @@ def create_pretrained_classifier_env_fn(
 
 def create_unet_env_fn(
     data_split: str,
+    classifier_dir: str,
     return_dataset_manager: bool = False,
 ) -> Union[
     Callable[[ConfigDict], gym.Env],
@@ -184,9 +185,9 @@ def create_unet_env_fn(
 
         env_config = {
                 "dataset_manager": dataset_manager,
-                "model_dir": config["classifier_dir"],
+                "model_dir": classifier_dir,
                 "index_dims": 2,
-                "acquisition_cost": config["acquisition_cost"],
+                "acquisition_cost": 1e-3,
         }
 
         return gym.make('PretrainedUNetEnv-v0', env_config=env_config)

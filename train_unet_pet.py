@@ -13,6 +13,7 @@ sys.path.insert(1, '../')
 
 from afa.masking import get_add_mask_fn, UniformMaskGenerator, BernoulliMaskGenerator, ImageBernoulliMaskGenerator
 from afa.networks.segment.unet3 import UNet
+from afa.data import load_pet_as_numpy
 from keras.layers import RandomFlip
 from keras.losses import SparseCategoricalCrossentropy
 
@@ -132,6 +133,8 @@ def main(
         max_observed_percentage,
         min_observed_percentage,
     )
+
+    features, targets = load_pet_as_numpy('train')
 
     model = UNet(input_size=data_shape)
 

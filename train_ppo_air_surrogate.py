@@ -2,31 +2,37 @@ import json
 import os
 
 import click
-import gym
 import tensorflow as tf
 import wandb
-
-from afa.data import load_pet_as_numpy
-import afa.environments
-from afa.environments.dataset_manager import EnvironmentDatasetManager
-from afa.networks.segment.unet3 import UNet
-
-from gym.envs.registration import register
 
 import sys
 sys.path.insert(1, '../')
 
 from afa.agents.base import WandbCallback
 from afa.agents.ppo import PPOAgent
+from afa.environments.utils import create_surrogate_air_env_fn
 
-for device in tf.config.list_physical_devices("GPU"):
+gpus = tf.config.list_physical_devices("GPU")
+
+if gpus:
     try:
-        tf.config.experimental.set_memory_growth(device, True)
+        tf.config.experimental.set_memory_growth(gpus[0], True)
     except:
         pass
 
+tf.config.set_visible_devices(gpus[:1], device_type="GPU")
+
 
 @click.command()
+@click.option(
+    "--dataset", type=click.STRING, required=True, help="The dataset to train on."
+)
+@click.option(
+    "--surrogate_artifact",
+    type=click.STRING,
+    required=True,
+    help="The artifact name for the surrogate model to use.",
+)
 @click.option(
     "--num_iterations",
     type=click.INT,
@@ -36,14 +42,13 @@ for device in tf.config.list_physical_devices("GPU"):
 @click.option(
     "--num_eval_episodes",
     type=click.INT,
-    default=20,
     help="The number of episodes to roll out during the evaluation stage of "
     "each iteration.",
 )
 @click.option(
     "--total_rollouts_length",
     type=click.INT,
-    default=256,
+    default=512,
     help="The total number of timesteps of experience that are collected at "
     "each iteration.",
 )
@@ -52,6 +57,12 @@ for device in tf.config.list_physical_devices("GPU"):
     type=click.INT,
     default=16,
     help="The number of parallel workers used for collecting experience.",
+)
+@click.option(
+    "--acquisition_cost",
+    type=click.FLOAT,
+    default=0.1,
+    help="The cost of acquiring each feature.",
 )
 @click.option(
     "--num_sgd_epochs",
@@ -66,7 +77,7 @@ for device in tf.config.list_physical_devices("GPU"):
     help="The minibatch size for each SGD step.",
 )
 @click.option(
-    "--learning_rate", type=click.FLOAT, default=5e-5, help="The learning rate."
+    "--learning_rate", type=click.FLOAT, default=5e-4, help="The learning rate."
 )
 @click.option(
     "--entropy_coef",
@@ -92,7 +103,7 @@ for device in tf.config.list_physical_devices("GPU"):
 @click.option(
     "--max_grad_norm", type=click.FLOAT, help="The gradient clipping threshold."
 )
-@click.option("--gamma", type=click.FLOAT, default=0.999, help="The discount factor.")
+@click.option("--gamma", type=click.FLOAT, default=0.99, help="The discount factor.")
 @click.option(
     "--lambda_", type=click.FLOAT, default=0.95, help="The GAE lambda parameter."
 )
@@ -121,13 +132,30 @@ for device in tf.config.list_physical_devices("GPU"):
     "policy network.",
 )
 @click.option(
+    "--remote_surrogate",
+    type=click.BOOL,
+    default=False,
+    help="Whether or not the surrogate model should run in a remote process.",
+)
+@click.option(
+    "--gpus_per_surrogate",
+    type=click.FLOAT,
+    default=0.0,
+    help="The number of (possibly fractional) GPUs to allocate per surrogate model."
+    "This is only relevant if --remote_surrogate=True, and the surrogates must be"
+    "run remotely in order to use GPUs.",
+)
+@click.option(
     "--offline", is_flag=True, help="Whether or not to run W&B in offline mode."
 )
 def main(
+    dataset,
+    surrogate_artifact,
     num_iterations,
     num_eval_episodes,
     total_rollouts_length,
     num_workers,
+    acquisition_cost,
     num_sgd_epochs,
     minibatch_size,
     learning_rate,
@@ -142,33 +170,21 @@ def main(
     conv_layers,
     activation,
     value_network,
+    remote_surrogate,
+    gpus_per_surrogate,
     offline,
 ):
-    """Trains a PPO agent in a standard Gym environment."""
     config = locals()
 
     run = wandb.init(
         project="active-acquisition",
-        job_type="train_ppo_gym",
+        job_type="train_ppo_air_surrogate",
         config=config,
         mode="disabled" if offline else "online",
     )
 
-    features, targets = load_pet_as_numpy('train')
-    dataset_manager = EnvironmentDatasetManager.remote(features, targets)
-
-    unet_artifact = run.use_artifact("oxford_pet_unet_classifier:v20")
-    unet_artifact_dir = os.path.abspath(unet_artifact.download()) 
-
-    env_config = {
-            "dataset_manager": dataset_manager,
-            "model_dir": unet_artifact_dir,
-            "index_dims": 2,
-            "acquisition_cost": 1e-3,
-    }
-
-    def make_env(config):
-        return gym.make('PretrainedUNetEnv-v0', env_config=env_config)
+    surrogate_artifact = run.use_artifact(surrogate_artifact)
+    surrogate_path = os.path.abspath(surrogate_artifact.download())
 
     model_config = {"value_network": value_network}
 
@@ -195,12 +211,26 @@ def main(
         "max_grad_norm": max_grad_norm,
         "gamma": gamma,
         "lambda": lambda_,
+        "env_config": {
+            "surrogate": {
+                "type": surrogate_artifact.type,
+                "config": {
+                    "model_dir": surrogate_path,
+                    "info_gains_evaluation_method": "scan_samples",
+                },
+                "run_remote": remote_surrogate,
+                "num_gpus": gpus_per_surrogate,
+            },
+            "acquisition_cost": acquisition_cost,
+        },
     }
+
+    env_fn = create_surrogate_air_env_fn(dataset, "train")
+
+    agent = PPOAgent(agent_config, env_fn)
 
     with open(os.path.join(run.dir, "agent_config.json"), "w") as fp:
         json.dump(agent_config, fp)
-
-    agent = PPOAgent(agent_config, make_env)
 
     try:
         agent.train(
@@ -215,11 +245,19 @@ def main(
             "using current best weights."
         )
 
-    agent_artifact = wandb.Artifact(f"unet_pet_ppo_agent", type="agent")
+    agent_artifact = wandb.Artifact(
+        f"{dataset}_ppo_air_surrogate_agent",
+        metadata=dict(
+            agent_class=PPOAgent.__name__,
+            surrogate_artifact=surrogate_artifact.name,
+            dataset=dataset,
+        ),
+        type="agent",
+    )
     agent_artifact.add_file(os.path.join(run.dir, "best_weights.pkl"))
     agent_artifact.add_file(os.path.join(run.dir, "agent_config.json"))
     run.log_artifact(agent_artifact)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()

@@ -53,6 +53,8 @@ def load_pet_as_numpy(
     x, y = ds.batch(ds.cardinality().numpy()).get_single_element()
     x = np.asarray(x)
     y = np.asarray(y)
+    x = x[:x.shape[0]//4]
+    y = y[:y.shape[0]//4]
     return x, y
 
 def load_unsupervised_split_as_numpy(dataset: str, split: str) -> np.ndarray:

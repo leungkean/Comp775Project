@@ -164,7 +164,7 @@ def main(
             "dataset_manager": dataset_manager,
             "model_dir": unet_artifact_dir,
             "index_dims": 2,
-            "acquisition_cost": 5e-3,
+            "acquisition_cost": 2e-3,
     }
 
     def make_env(config):
