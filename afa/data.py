@@ -24,6 +24,7 @@ def load_supervised_split_as_numpy(
         x = x.astype(np.float32) / 255.0
     return x, y
 
+#################### New ####################
 def load_pet_as_numpy(
         split: str
 ) -> Tuple[np.ndarray, np.ndarray]:

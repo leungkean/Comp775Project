@@ -268,6 +268,7 @@ class IndirectClassificationEnv(AcquisitionEnv):
         info["target"] = self.current_target
         return obs, reward, done, info
 
+#################### New ####################
 class PretrainedUNetEnv(AcquisitionEnv):
     """An acquisition environment where the agent defers to a pretrained U-Net.
 
