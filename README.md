@@ -4,6 +4,23 @@ Image Segmentation using Both Supervised and Unsupervised Active Feature Acquisi
 ## Initialization
 Follow the `afa_guide.txt` for intialization.
 
+## AFA Datasets
+
+Custom datasets, not found in TensorFlow datasets by default, are found in
+[`afa/datasets`](afa/datasets). Currently, the following datasets are provided:
+- stare (STARE): Retina dataset for unsupervised AFA
+
+These datasets should be automatically registered anytime `afa` is imported.
+However, they can also be built manually by navigating to the directory of the
+dataset you wish to build, then running `tfds build`. Also note that `gdown` needs to
+be installed before some of the datasets can be built.
+
+If you would like to add a new dataset, please see
+[this guide](https://www.tensorflow.org/datasets/add_dataset) for instructions on how
+to create one. You can also refer to the existing directories inside
+[`afa/datasets`](afa/datasets) for examples. Note that you should also update
+[`afa/__init__.py`](afa/__init__.py) accordingly once you add a new dataset.
+
 ## Training the Surrogate Model
 To train the surrogate model for AIR (unsupervised AFA) just run `train_air_deformer_surrogate.py`.
 
