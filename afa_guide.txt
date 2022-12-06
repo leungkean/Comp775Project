@@ -1,0 +1,165 @@
+ACTIVE ACQUISITION STEP-BY-STEP GUIDE
+#==============================================================================
+
+### TABLE OF CONTENTS
+
+0.   Initialize Environment
+       (a) UNC Longleaf 
+       (b) leela.cs.unc.edu 
+       (c) fry.cs.unc.edu
+1.   Install Python Packages
+1.5. Initalize wandb
+2.   Training and Evaluation
+       (a) UNC Longleaf 
+       (b) leela.cs.unc.edu 
+       (c) fry.cs.unc.edu
+3.   Known Issues and Workarounds
+       (a) Training the Surrogate Model
+       (b) Training the MDP Agent using PPO
+       (c) Evaluating the MDP Agent
+
+### 0. Initialize Environment
+
+    (a) UNC Longleaf (Requires a UNC Longleaf account and GPU access):
+        
+        First, login to UNC Longleaf using ssh:
+
+        $ ssh -X <onyen>@longleaf.unc.edu
+
+        Once logged in, load the following modules and initialize the conda environment:
+
+        $ module add git
+        $ module add anaconda/2021.11 
+        $ module add gcc/9.1.0 
+        $ module add cuda/11.4
+
+        $ source /nas/longleaf/apps/anaconda/2021.11/etc/profile.d/conda.sh 
+        $ conda create --name active 
+        $ conda activate active 
+
+        $ conda install -c anaconda cudnn -y 
+        $ conda install -c nvidia cuda-toolkit -y 
+
+        Then clone the active-acquisition repository:
+
+        $ git clone git@github.com:leungkean/active-acquisition.git
+
+        Reference: https://its.unc.edu/research-computing/techdocs/getting-started-on-longleaf/
+
+    (b) leela.cs.unc.edu:
+
+        Clone the active-acquisition repository:
+
+        $ git clone git@github.com:leungkean/active-acquisition.git
+
+        Get anaconda install script and install anaconda:
+
+        $ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+        $ chmod +x Anaconda3-2022.05-Linux-x86_64.sh
+        $ ./Anaconda3-2022.05-Linux-x86_64.sh
+
+        Initialize the conda environment and export CUDA and CUDNN to current LD_LIBRARY_PATH:
+
+        $ conda create --name active 
+        $ conda activate active
+        $ conda install python=3.9
+        
+        $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/playpen1/scribble/keanl/anaconda3/envs/active/lib 
+        $ export PATH=$PATH:/playpen1/scribble/keanl/anaconda3/envs/active/bin 
+
+        $ conda install -c anaconda cudnn -y
+        $ conda install -c nvidia cuda-toolkit -y
+
+    (c) fry.cs.unc.edu: 
+
+        Same intialization as for leela.cs.unc.edu.
+
+### 1. Install Python Packages
+
+    On all machines, install the following python packages via pip:
+
+    $ pip install "jax[cuda11_cudnn805]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+    $ pip install tensorflow_probability==0.16.0 
+    $ pip install tensorflow
+    $ pip install tensorflow_datasets==4.5.2
+    $ pip install dm-haiku optax chex>=0.1.3
+    $ pip install bax
+    $ pip install wandb click gdown numpy einops Pillow scikit-image
+    $ pip install "ray[default,rllib]>=1.12.0rc1"
+    $ pip install git+https://github.com/lupalab/ace.git
+
+### 1.5 Initialize wandb
+
+    Create a wandb account. Once logged into your account, run the following command on your machine:
+
+    $ wandb login
+
+    Then, run the following command on your machine:
+
+    $ wandb init --name active-acquisition
+
+### 2. Training and Evaluation
+
+    (a) UNC Longleaf (using SLURM):
+        
+        First, we need to train the DEformer surrogate model. To train the surrogate model, I have already setup a SLURM job script that can be run on the cluster. 
+        The job script is "train_surrogate.sh" and is located in the train/ folder. To run the job script just run the following command:
+
+        $ sbatch train_surrogate.sh
+
+        Similarly, to train the MDP agent using PPO (Proximal Policy Optimization), use the job script "train_policy.sh" in the train/ folder and run the following command:
+
+        $ sbatch train_policy.sh
+
+        In training the MDP agent you will need to change the argument associated with the --artifact argument in the job script. 
+        The artifact name is the name of the surrogate model that you want to use for the MDP agent saved in wandb.
+        You may also need to change the argument associated with the --info_gains_evaluation flag to get best results.
+        To evaluate the MDP agent, use the job script "eval_policy.sh" in the eval/ folder and run the following command:
+
+        $ sbatch eval_policy.sh
+
+        In evaluating the MDP agent, you will need to provide the correct artifact name.
+        Also, you will need to change the argument associated with the --num_episodes flag. 
+        The --num_episodes argument should have a value that is a multiple of --num_workers but is less than the test size.
+        For example, if the test size is 100 and the --num_workers is 10, then the --num_episodes should be 90.
+        
+        Note: You may need to play around with the hardware limits such as memory, cpu cores, number of gpus, ... to get these scripts to run correctly.
+
+        Reference: https://its.unc.edu/research-computing/techdocs/longleaf-slurm-examples/#Python%20Examples
+
+    (b) leela.cs.unc.edu:
+        
+        First, train the DEformer surrogate model. To train the surrogate model, run the following command in the train/ folder:
+
+        $ python train_classification_deformer_surrogate.py --dataset molecule_20 --batch_size 256 --steps 100000
+
+        Then, train the MDP agent using PPO (Proximal Policy Optimization). To train the MDP agent, run the following command in the train/ folder:
+
+        $ python train_ppo_classification_surrogate.py --dataset molecule_20 --surrogate_artifact molecule_20_classification_deformer:v0 --num_iterations 200 --total_rollouts_length 512 --num_workers 16 --acquisition_cost 0.01 --remote_surrogate true --gpus_per_surrogate 0.1
+
+        Then, evaluate the MDP agent. To evaluate the MDP agent, run the following command in the eval/ folder:
+
+        $ python eval_classification_surrogate.py --agent_artifact molecule_20_ppo_classification_surrogate_agent:v0 --num_episodes 624 --num_workers 16 --data_split test --remote_surrogate true --gpus_per_surrogate 0.1 --save_trajectories True
+
+    (c) fry.cs.unc.edu:
+
+        Same commands as for leela.cs.unc.edu.
+
+### 3. Known Issues and Workarounds
+
+    Most issues are related to the GPU crashing, hanging, or memory overflow.
+
+    (a) Training the Surrogate Model:
+
+        Training the DEformer surrogate model using the full molecule dataset is very slow, and may result in the GPU hanging or crashing unexpectedly after a number of time steps.
+        To avoid this, train the DEformer surrogate model using a smaller dataset. Or train the DEformer surrogate model using a smaller batch size and reduce the number of steps.
+
+    (b) Training the MDP Agent using PPO:
+
+        Training the MDP agent using PPO with the full molecule dataset may result in overflow of GPU memory. 
+        To avoid this, include --info_gains_evaluation_method flag and select either "scan_samples" or "scan_features" and reduce the --total_rollouts_length.
+
+    (c) Evaluating the MDP Agent:
+
+        In evaluation, make sure the --num_episodes is a multiple of --num_workers less than the test size.
+        If evaluation is too slow, try reducing the --total_rollouts_length.
